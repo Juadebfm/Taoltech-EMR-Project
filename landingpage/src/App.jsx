@@ -5,7 +5,7 @@ import PageTwo from "./pages/PageTwo";
 
 function App() {
   return (
-    <div className="font-montserrat py-8">
+    <div className="font-montserrat pt-8">
       <Router>
         <Routes>
           <Route path="/" element={<PageOne />} />

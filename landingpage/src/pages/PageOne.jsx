@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import FemaleDoctor from "../assets/doctor-female.png";
@@ -19,6 +19,10 @@ import Signup from "../assets/signup.png";
 import Manage from "../assets/manage.png";
 import Multi from "../assets/multidevice.png";
 import Collaborate from "../assets/collaborate.png";
+import DoctorContact from "../assets/doctor-contact-main.png";
+import { FaFacebookF } from "react-icons/fa";
+import { TiSocialTwitter } from "react-icons/ti";
+import { FaInstagram } from "react-icons/fa";
 
 import {
   VerticalTimeline,
@@ -26,22 +30,28 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CustomSwiper from "../components/CustomSwiper";
+import ReactFlagsSelect from "react-flags-select";
+import { Link } from "react-router-dom";
 
 function PageOne() {
+  const [selected, setSelected] = useState("US");
+
+  const countryCodes = ["US", "GB", "FR", "DE", "IT", "NG", "CA", "IN"];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Div */}
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-20 py-8">
           <div className="flex items-stretch w-full h-[70vh]">
             <div className="flex-1 flex flex-col justify-center items-start text-center md:text-left p-4 h-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 w-[85%] !leading-[1.3]">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 w-[95%] !leading-[1.3]">
                 Revolutionizing{" "}
                 <span className="text-primaryColor">Hospital</span> Management
                 and Patient Care
               </h1>
-              <p className="font-extralight w-[45%]">
+              <p className="font-extralight w-[55%]">
                 Empower Your Healthcare Practice with Our Comprehensive,
                 Cloud-Based EMR Platform
               </p>
@@ -273,7 +283,148 @@ function PageOne() {
         {/* Testimonial */}
         <CustomSwiper />
         {/* CTA */}
+        <div className="bg-[#17263F] p-24 flex items-center justify-between">
+          <div>
+            <h2 className="text-[48px] w-[80%] leading-none text-white">
+              Ready to Transform Your Practice?
+            </h2>
+          </div>
+          <Button buttonText="Request A Demo" className="justify-self-start" />
+        </div>
+        {/* Contact */}
+        <div className="p-24 flex items-center justify-between gap-24">
+          <div className="w-1/2">
+            <img src={DoctorContact} alt="" />
+          </div>
+          <div className="w-1/2">
+            <div className="w-[480px]">
+              <div className="bg-[#F0F5FE] p-10 rounded-xl shadow-lg space-y-4">
+                {/* Name */}
+                <div className="flex items-start justify-center flex-col w-full space-y-2">
+                  <label htmlFor="Name">Name</label>
+                  <input
+                    type="text"
+                    name="Name"
+                    placeholder="John Doe"
+                    className="w-full h-[48px] px-4"
+                  />
+                </div>
+                {/* Email */}
+                <div className="flex items-start justify-center flex-col w-full space-y-2">
+                  <label htmlFor="Email">Email</label>
+                  <input
+                    type="email"
+                    name="Email"
+                    placeholder="johndoe@mail.com"
+                    className="w-full h-[48px] px-4"
+                  />
+                </div>
+                {/* Phone */}
+                <div className="flex items-start justify-center flex-col w-full space-y-2">
+                  <label htmlFor="Phone">Phone</label>
+                  <div className="flex items-center w-full h-[48px] bg-white px-4">
+                    {/* <ReactFlagsSelect
+                      selected={selected}
+                      onSelect={(code) => setSelected(code)}
+                      countries={countryCodes}
+                      customLabels={{
+                        US: "+1",
+                        GB: "+44",
+                        FR: "+33",
+                        DE: "+49",
+                        IT: "+39",
+                        NG: "+234",
+                        CA: "+1",
+                        IN: "+91",
+                      }}
+                      placeholder="Select Code"
+                      searchable
+                      className="menu-flags w-max border-none"
+                      selectButtonClassName="menu-flags-button"
+                    /> */}
+                    <input
+                      type="tel"
+                      name="Phone"
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+                </div>
+                {/* Message */}
+                <div className="flex items-start justify-center flex-col w-full space-y-2">
+                  <label htmlFor="Message">Message</label>
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Check */}
+                <div className="flex items-center justify-center w-full gap-3">
+                  <input type="checkbox" className="" />
+                  <span>You agree to our friendly privacy policy.</span>
+                </div>
+              </div>
+              <Button buttonText="Send Message" className="w-full mt-8" />
+            </div>
+          </div>
+        </div>
       </main>
+
+      <footer className="bg-[#17263F] px-24 py-12 text-white">
+        {/* Top Content */}
+        <div className="grid grid-cols-2 items-center justify-between">
+          <div className="w-full">
+            <div className="w-[447px]">
+              <span className="font-bold w-[33.3%] text-cardheading">Logo</span>
+              <p className="mt-5">
+                Discover our dedication to transforming healthcare with
+                innovative technology. Learn about our journey and how our EMR
+                platform is designed to meet the needs of modern healthcare
+                providers.
+              </p>
+            </div>
+          </div>
+          <ul className="flex items-center justify-end gap-8">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/support">Support</Link>
+            </li>
+            <li>
+              <Link to="/pricing">Pricing</Link>
+            </li>
+          </ul>
+        </div>
+        {/* Mid Content */}
+        <div className="mt-14 flex items-center justify-between">
+          <p>Subscribe to our newletter</p>
+          <div className="border rounded-lg p-4 border-white/70 w-[393px] h-[73px] relative flex items-center justify-between">
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              className="ring-0 border-none bg-transparent"
+            />
+            <Button
+              buttonText="Subscribe"
+              className="w-[130px] h-[49px] absolute right-4"
+            />
+          </div>
+          <div className="flex items-center justify-center gap-4">
+            <FaFacebookF size={25} />
+            <TiSocialTwitter size={25} />
+            <FaInstagram size={25} />
+          </div>
+        </div>
+        {/* Sub Script */}
+        <div></div>
+      </footer>
     </div>
   );
 }
