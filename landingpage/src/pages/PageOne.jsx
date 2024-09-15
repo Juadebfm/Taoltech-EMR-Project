@@ -39,25 +39,25 @@ function PageOne() {
   const countryCodes = ["US", "GB", "FR", "DE", "IT", "NG", "CA", "IN"];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Div */}
-        <div className="container mx-auto px-20 py-8">
-          <div className="flex items-stretch w-full h-[70vh]">
+        <div className="mx-auto px-[25px] sm:px-20 py-8">
+          <div className="flex flex-col sm:flex-row items-stretch w-full h-max sm:h-[70vh]">
             <div className="flex-1 flex flex-col justify-center items-start text-center md:text-left p-4 h-auto">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 w-[95%] !leading-[1.3]">
                 Revolutionizing{" "}
                 <span className="text-primaryColor">Hospital</span> Management
                 and Patient Care
               </h1>
-              <p className="font-extralight w-[55%]">
+              <p className="font-extralight sm:w-[55%]">
                 Empower Your Healthcare Practice with Our Comprehensive,
                 Cloud-Based EMR Platform
               </p>
               <Button buttonText="Get Started" className="mt-[60px]" />
             </div>
-            <div className="relative flex-1 flex items-center justify-center p-4">
+            <div className="hidden relative flex-1 sm:flex items-center justify-center p-4">
               <div className="ripple-container relative w-full h-full flex items-center justify-center">
                 <div className="sphere sphere1"></div>
                 <div className="sphere sphere2"></div>
@@ -74,7 +74,7 @@ function PageOne() {
           </div>
         </div>
         {/* About Us Div */}
-        <div className="h-max bg-[#F0F5FE] p-24 flex items-center justify-between gap-24">
+        <div className="h-max bg-[#F0F5FE] p-[25px] sm:p-24 flex flex-col sm:flex-row items-center justify-between gap-16 sm:gap-24">
           <div className="w-full">
             <img
               src={BlackDoctor}
@@ -86,7 +86,7 @@ function PageOne() {
             <h2 className="text-primaryColor text-subheading capitalize font-bold">
               about us
             </h2>
-            <p className="font-light w-[87%]">
+            <p className="font-light w-full sm:w-[87%]">
               EMR software is a digital version of the traditional paper-based
               medical records system used in healthcare. It is designed to
               store, manage, and retrieve patient health information, including
@@ -99,19 +99,19 @@ function PageOne() {
           </div>
         </div>
         {/* Features */}
-        <div className="h-max p-24">
+        <div className="h-max p-[25px] sm:p-24">
           <div>
             <h2 className="text-primaryColor text-subheading capitalize font-bold">
               key features
             </h2>
-            <p className="font-light w-[35%] mt-3">
+            <p className="font-light w-full sm:w-[35%] mt-3">
               The EMR platform is scalable, accessible, and user-centric. It
               ensures fast load times and efficient data processing, supporting
               up to 10,000 users.
             </p>
           </div>
           {/* Features Card */}
-          <div className="mt-16 flex items-center justify-start gap-5">
+          <div className="mt-16 flex flex-col sm:flex-rowitems-center justify-start gap-5">
             <FeaturesCard
               cardText="Easily manage patient records as your practice grows."
               cardTitle="Scalability"
@@ -143,14 +143,14 @@ function PageOne() {
             <h2 className="text-primaryColor text-subheading capitalize font-bold text-center">
               Why Choose Our EMR Platform?
             </h2>
-            <p className="font-extralight w-[55%] mt-3 text-center mx-auto">
+            <p className="font-extralight w-full sm:w-[55%] mt-3 text-center mx-auto">
               Our EMR platform combines advanced technology with an easy-to-use
               interface, ensuring secure, scalable performance. It reduces
               administrative burdens and boosts clinical efficiency, allowing
               your team to focus on delivering excellent patient care.
             </p>
           </div>
-          <div className="mt-20 grid grid-cols-3 place-items-center gap-10">
+          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 place-items-center gap-10">
             <div className="space-y-16">
               <div>
                 <div className="flex items-center justify-start gap-5">
@@ -159,7 +159,7 @@ function PageOne() {
                     Efficient Healthcare Delivery
                   </h3>
                 </div>
-                <p className="font-extralight w-[80%] mt-2">
+                <p className="font-extralight w-full sm:w-[80%] mt-2">
                   Enables healthcare providers to retrieve patient information
                   swiftly, allowing for faster diagnosis and treatment.
                 </p>
@@ -171,7 +171,7 @@ function PageOne() {
                     Improved Accuracy
                   </h3>
                 </div>
-                <p className="font-extralight w-[80%] mt-2">
+                <p className="font-extralight w-full sm:w-[80%] mt-2">
                   Enables healthcare providers to retrieve patient information
                   swiftly, allowing for faster diagnosis and treatment.
                 </p>
@@ -188,7 +188,7 @@ function PageOne() {
                     Streamlined Workflow
                   </h3>
                 </div>
-                <p className="font-extralight w-[80%] mt-2">
+                <p className="font-extralight w-full sm:w-[80%] mt-2">
                   Automated processes and efficient data management save time
                   and enhance productivity for healthcare providers
                 </p>
@@ -200,7 +200,7 @@ function PageOne() {
                     Better Patient Outcomes
                   </h3>
                 </div>
-                <p className="font-extralight w-[80%] mt-2">
+                <p className="font-extralight w-full sm:w-[80%] mt-2">
                   Provides comprehensive patient information, enabling
                   healthcare providers to deliver more personalized and
                   effective treatments

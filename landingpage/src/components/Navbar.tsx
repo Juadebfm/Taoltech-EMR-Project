@@ -4,10 +4,10 @@ import Button from "./Button";
 
 function Navbar() {
   return (
-    <div className="flex items-center justify-between px-24 py-2">
-      <span className="font-bold w-[33.3%] text-cardheading">Logo</span>
+    <nav className="flex items-center justify-between px-[35px] sm:px-24 py-2">
+      <span className="w-auto font-bold sm:w-[33.3%] text-cardheading">Logo</span>
 
-      <ul className="flex items-center justify-center gap-8 w-[33.3%]">
+      <ul className="hidden sm:flex items-center justify-center gap-8 w-auto sm:w-[33.3%]">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -22,8 +22,8 @@ function Navbar() {
         </li>
       </ul>
 
-      <Button buttonText="Request A Demo" className="ml-auto" />
-    </div>
+      <Button buttonText="Request A Demo" className="ml-0 sm:ml-auto w-auto px-6" />
+    </nav>
   );
 }
 
